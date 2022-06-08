@@ -12,7 +12,7 @@ Baza dancych składa się z 25 tabel, które zostaną po krótce omówione poni�
 ### Więźniowie i pracownicy
 Każdy więzień i pracownik gdy przychodzi do naszego więzienia zyostaje dodany do  tabel więźniowie i pracownicy. Przetrzymujemy jego podstawowe dane oraz nadajemy mu unikalny numer id. 
 ### Historia_wiezniowie i historia_pracownicy
-Przetrzymujemy również wszystkie historyczne dane. Trzymamy daty przyjścia osoby oraz datę zakończenia pobytu. Dla więźniów te powody mogą być różne i musimy to odnotowywać, do czego służą tabele **powod_zakonczenia** i **powody_zakonczenia_rodzaje**. Dla pracowników działa to delikatnie inaczej, jako że każda zmiana stanowiska lub przełożonego również jest odnotowywana. Jest to bardzo wygodne, jako że gdy pracownik wraca do nas po przerwie lub więzień ponownie trafia do naszej placówki, nie tworzymy go od nowa, a jedynie dodajemy jedynie wpis do tych tabel. Umożliwia to dostęp do historycznych danych osoby w dowolnej chwili.
+Przetrzymujemy również wszystkie historyczne dane. Trzymamy daty przyjścia osoby oraz datę zakończenia pobytu. Dla więźniów te powody mogą być różne i musimy to odnotowywać, do czego służą tabele **powod_zakonczenia** i **powody_zakonczenia_rodzaje**. Dla pracowników działa to delikatnie inaczej, jako że każda zmiana stanowiska (stanowiska znajdują sięw tabeli **stanowiska**) lub przełożonego również jest odnotowywana. Jest to bardzo wygodne, jako że gdy pracownik wraca do nas po przerwie lub więzień ponownie trafia do naszej placówki, nie tworzymy go od nowa, a jedynie dodajemy jedynie wpis do tych tabel. Umożliwia to dostęp do historycznych danych osoby w dowolnej chwili.
 ### Wiezniowie_wyroki i historia_wyroku
 Gdy więzień do nas trafia to musimy wiedzieć za co został do nas wysłany oraz na ile. Jest to bardzo wygodne, jako że gdy wyrok się zmienia wystarczy zmienić lub dodać wpis do historia_wyroku. 
 ### Wiezniowie_cele, cele i bloki
@@ -31,3 +31,47 @@ Każdemy czasem nie może być w pracy. Notujemy wtedy niebecność danego praco
 Nasz zakład operuje zmianowo. Każdy pacownik jest przypisany do pewnych zmian, które pracują w dany dzień o danych godzinach.
 ### Pracownicy_zespoly i zespoly
 Każdy pracownik jest częścią jakiegoś zespołu. Zapisujemy od kiedy do kiedy był częścią danej ekipy. Każdy zespół jest przypisany na piętro danego bloku. 
+
+## Poradnik po aplikacji
+Aplikacja jest dość intuicyjna, tak więc niektóre aspekty mogą nie zostać dogłębnie wyjaśnione.
+### Menu
+![navbar](https://github.com/jakubbinieda/idWiezienie/blob/main/images/navbar.png?raw=true)
+W celu poruszania się po stronie używamy menu, które znajduje się na górze ekranu. Jak widzimy aplikacja składa się z pięciu podstron. W celu zmienienia podstrony należy przycisnąć daną podstronę. 
+### Strona główna
+![dashboard](https://github.com/jakubbinieda/idWiezienie/blob/main/images/dashboard.png?raw=true)
+Strona główna lub deska rodzielcza umożliwia nam przegląd podstawowych statystyk naszego więzienia. Możemy przeczytać
+ - Ile więźniów przybyło dzisiaj 
+ - Historyczne statystyki naszej placówki
+ - W jakim stopniu cele są zepłnione
+ - Ilu pracowników jest na urlopie
+ - Ilu więźniów jest w gangach
+### Więźniowie
+Podstrona więźniowie umożliwia nam wiele operacji na więźniach.
+![search](https://github.com/jakubbinieda/idWiezienie/blob/main/images/prisonerSearch.png?raw=true)
+Pierwsze co widzimy to okno, które umożliwia nam przeszukiwanie więźniów. Możemy przeszukiwać się po dowolnym polu. W wypadku nie wpisania żadnego zostaną wypisani wszyscy więźniowie. Możemy również dodać więźnia, ale o tym za chwilę.
+![list](https://github.com/jakubbinieda/idWiezienie/blob/main/images/prisonerList.png?raw=true)
+Poniżej widzimy listę więźniów, którzy pasują do naszych wyszukiwań. Przyciskając w dowolny link możemy przejść do strony profilowej więźnia.
+![edit](https://github.com/jakubbinieda/idWiezienie/blob/main/images/prisonerChange.png?raw=true)
+![history](https://github.com/jakubbinieda/idWiezienie/blob/main/images/prisonerHistory.png?raw=true) 
+Będąc już na profilu możemy edytować podstawowe dane osadzonego, jak i wyświetlić jego historię i dane, które uznaliśmy za ciekawe.
+![things](https://github.com/jakubbinieda/idWiezienie/blob/main/images/prisonerThings.png?raw=true)
+Możemy również przeprowadzać różne operacje takie jak wypuszczenie, czy zmiana celi.
+![creator](https://github.com/jakubbinieda/idWiezienie/blob/main/images/prisonerCreator.png?raw=true)
+Wracając do dodawania więźnia, które zostało wspomniane wcześniej. Możemy tutaj dodać skazanego. Warto dodać że po tej operacji zostanie on jedynie dodany do bazy, nie będzie miał wyroku.
+## Gangi i pracownicy
+Te dwie podstrony działają identycznie do tej więźniów, tak więc pozwolę sobie pominąć tłumaczenie.
+## Zaawansowane
+![advanced](https://github.com/jakubbinieda/idWiezienie/blob/main/images/advanced.png?raw=true)
+To okno pozwala nam przeprowadzić zaawansowane operacje na bazie. Wymaga to wiedzy PostgreSQL. Jest to bardzo niebezpieczne i nie do końca przetestowane. 
+
+> Użycie znaku procent % w zapytaniu powoduje, że serwer się wyłącza. Jest to związane ze sposobem przekazywania zapytań pomiędzy klientem a serwerem, gdzie spacja jest oznaczana przez '%20'. Jest to słabość NodeJS i mojej niekompetencji w tworzeniu aplikacji, a nie samej bazy.
+
+## Instalacja
+Nie zaleca się pobierać tego na własną rękę, ale jeżeli jest taka konieczność to należy wykonać poniższe komendy:
+```
+git clone https://github.com/jakubbinieda/idWiezienie.git
+cd idWiezienie
+npm install
+```
+
+Wymaga to posiadania na swojej maszynie zainstalowanego NodeJS, NPM i PostgreSQL. Wymagana jest również konfiguracja pliku `/idWiezienie/client/models/dbModel.js` Należy tam wpisać dane z lokalnego PostgreSQL.
