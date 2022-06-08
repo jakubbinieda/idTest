@@ -1,7 +1,8 @@
 
 # Opis projektu
-System zarządzania jednostką penitencjarną.
+Naszym projektem jest system zarządzania jednostką penitencjarną. Umożliwia on przetrzymywanie wszystkich najważniejszych informacji zarówno o personelu, jak i o osadzonych w placówce. W bazie przetrzymuje się również większość historycznych danych, tak więc w łatwy sposób można dostać się również do informacji o byłych więźniach i pracownikach. Aplikacja, która demonstruje możliwości naszej bazy dostępna jest **[tutaj](https://id.jakubbinieda.omg.lol)**.
 
+Projekt został stworzony przez:
  - **[Jakub Binięda](https://github.com/jakubbinieda)**
  - **[Mateusz Hurkała](https://github.com/prolik123)**
  - **[Maciej Sanocki](https://github.com/msanock)**
