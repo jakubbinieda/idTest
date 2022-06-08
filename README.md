@@ -12,7 +12,7 @@ Baza dancych składa się z 25 tabel, które zostaną po krótce omówione poni�
 ### Więźniowie i pracownicy
 Każdy więzień i pracownik gdy przychodzi do naszego więzienia zyostaje dodany do  tabel więźniowie i pracownicy. Przetrzymujemy jego podstawowe dane oraz nadajemy mu unikalny numer id. 
 ### Historia_wiezniowie i historia_pracownicy
-Przetrzymujemy również wszystkie historyczne dane. Trzymamy daty przyjścia osoby oraz datę zakończenia pobytu. Dla więźniów te powody mogą być różne i musimy to odnotowywać, do czego służą tabele **powod_zakonczenia** i **powody_zakonczenia_rodzaje**. Dla pracowników działa to delikatnie inaczej, jako że każda zmiana stanowiska (stanowiska znajdują sięw tabeli **stanowiska**) lub przełożonego również jest odnotowywana. Jest to bardzo wygodne, jako że gdy pracownik wraca do nas po przerwie lub więzień ponownie trafia do naszej placówki, nie tworzymy go od nowa, a jedynie dodajemy jedynie wpis do tych tabel. Umożliwia to dostęp do historycznych danych osoby w dowolnej chwili.
+Przetrzymujemy również wszystkie historyczne dane. Trzymamy daty przyjścia osoby oraz datę zakończenia pobytu. Dla więźniów te powody mogą być różne i musimy to odnotowywać, do czego służą tabele **powod_zakonczenia** i **powody_zakonczenia_rodzaje**. Dla pracowników działa to delikatnie inaczej, jako że każda zmiana stanowiska (stanowiska znajdują się w tabeli **stanowiska**) lub przełożonego również jest odnotowywana. Bardzo to pomaga, jako że gdy pracownik wraca do nas po przerwie lub więzień ponownie trafia do naszej placówki, nie tworzymy go od nowa, a jedynie dodajemy jedynie wpis do tych tabel. Umożliwia to dostęp do historycznych danych osoby w dowolnej chwili.
 ### Wiezniowie_wyroki i historia_wyroku
 Gdy więzień do nas trafia to musimy wiedzieć za co został do nas wysłany oraz na ile. Jest to bardzo wygodne, jako że gdy wyrok się zmienia wystarczy zmienić lub dodać wpis do historia_wyroku. 
 ### Wiezniowie_cele, cele i bloki
@@ -30,7 +30,7 @@ Każdemy czasem może nie być w pracy. Notujemy wtedy niebecność danego praco
 ### Pracownicy_zmiany i zmiany
 Nasz zakład operuje zmianowo. Każdy pacownik jest przypisany do pewnych zmian, które pracują w dany dzień o danych godzinach.
 ### Pracownicy_zespoly i zespoly
-Każdy pracownik jest częścią jakiegoś zespołu. Zapisujemy od kiedy do kiedy był częścią danej ekipy. Każdy zespół jest przypisany na piętro danego bloku. 
+Każdy pracownik jest częścią jakiegoś zespołu. Zapisujemy od kiedy do kiedy był częścią danej grupy. Każdy zespół jest przypisany na piętro danego bloku. 
 
 ## Poradnik po aplikacji
 Aplikacja jest dość intuicyjna, tak więc niektóre aspekty mogą nie zostać dogłębnie wyjaśnione.
@@ -71,6 +71,8 @@ Nie zaleca się pobierać tego na własną rękę, ale jeżeli jest taka koniecz
 ```
 git clone https://github.com/jakubbinieda/idWiezienie.git
 cd idWiezienie
+npm install
+cd client/
 npm install
 ```
 
