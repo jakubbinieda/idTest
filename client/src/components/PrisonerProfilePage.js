@@ -348,8 +348,8 @@ function PrisonerProfilePage() {
                             <Card.Title className="text-center">O więźniu numer {prisoner.id_wieznia}</Card.Title>
                             <ListGroup as="ol" numbered>
                                 <ListGroup.Item as="li">Członek gangu: {prisoner.nazwa_gangu}</ListGroup.Item>
-                                <ListGroup.Item as="li">Negatywne sprawowania: {prisoner.ilosc_dobrych_sprawowan}</ListGroup.Item>
-                                <ListGroup.Item as="li">Pozytywne sprawowania: {prisoner.ilosc_zlych_sprawowan}</ListGroup.Item>
+                                <ListGroup.Item as="li">Pozytywne sprawowania: {prisoner.ilosc_dobrych_sprawowan}</ListGroup.Item>
+                                <ListGroup.Item as="li">Negatywne sprawowania: {prisoner.ilosc_zlych_sprawowan}</ListGroup.Item>
                                 <ListGroup.Item as="li">Brał udział w {prisoner.liczba_prac} pracach społecznych</ListGroup.Item>
                             </ListGroup>
                         </Card.Body>

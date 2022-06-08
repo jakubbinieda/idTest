@@ -803,7 +803,7 @@ create or replace function change_gang(id_w numeric, id_g numeric ) returns void
 declare
     id_curr_gang numeric;
 begin
-    if(czy_wiezien_ma_jeszcze_wyrok(id_w)) then
+    if(wiezien_aktywny(id_w)) then
         raise exception 'Wiezien nie jest obecnie w wiezieniu';
     end if;
     id_curr_gang = (select id_gangu from wiezniowie_gangi where id_wieznia = id_w and data_odejscia is null limit 1);
@@ -897,7 +897,7 @@ $$ language plpgsql;
 
 create or replace function wiezien_aktywny2(id_w numeric, szukana_data date)  returns boolean as $$
 begin
-    if((select id_w from historia_wiezniowie where id_w = id_wieznia and (szukana_data between data_rozpoczecia and coalesce(data_zakonczenia, current_date))) is not null) then return true;
+    if((select id_w from historia_wiezniowie where id_w = id_wieznia and (szukana_data between symmetric data_rozpoczecia and coalesce(data_zakonczenia, current_date))) is not null) then return true;
     end if;
     return false; 
 end;
@@ -1240,16 +1240,19 @@ create rule non_update_wiezniowie_wyroki_rule as on update to wiezniowie_wyroki 
 
 create or replace function wiezniowie_wyroki_function_trigger() returns trigger as $$
 begin 
-	--raise exception 'no nie';
-	if((select count(*) from wiezniowie_cele as "wc" 
-			where wc.id_wieznia = new.id_wieznia and wc.data_wyprowadzki is null) = 0) then
-			if(znajdz_id_wolnej_celi(plec_wieznia(new.id_wieznia)) is null) then
-				raise exception 'Nie ma wolnej celi da wieznia';
-				return old;
-			end if;
-			insert into wiezniowie_cele(id_wieznia,nr_celi,data_wyprowadzki,data_przydzialu) values (new.id_wieznia,znajdz_id_wolnej_celi(plec_wieznia(new.id_wieznia)),null,new.data_skazania);
-	end if;
-	return new;
+    --raise exception 'no nie';
+    if((select count(*) from wiezniowie_cele as "wc" 
+            where wc.id_wieznia = new.id_wieznia and wc.data_wyprowadzki is null) = 0) then
+            if(znajdz_id_wolnej_celi(plec_wieznia(new.id_wieznia)) is null) then
+                raise exception 'Nie ma wolnej celi da wieznia';
+                return old;
+            end if;
+            insert into wiezniowie_cele(id_wieznia,nr_celi,data_wyprowadzki,data_przydzialu) values (new.id_wieznia,znajdz_id_wolnej_celi(plec_wieznia(new.id_wieznia)),null,new.data_skazania);
+    end if;
+    if(not wiezien_aktywny(new.id_wieznia)) then
+        insert into historia_wiezniowie values (new.id_wieznia,new.data_skazania,null,null);
+    end if;
+    return new;
 end;
 $$ language plpgsql;
 
