@@ -18,7 +18,7 @@ Gdy więzień do nas trafia to musimy wiedzieć za co został do nas wysłany or
 ### Wiezniowie_cele, cele i bloki
 Każdy skazany musi być gdzieś zakwaterowany. Zostaje mu przypisana cela oraz zapisujemy kiedy został do niej przeniesiony. W razie zmiany przypisujemy dodatkowo datę zakończenia pobytu w danej celi. Możemy dzięki temu sprawdzić, w których celach był więzień podczas pobytu u nas, nawet jak już wyszedł z więzienia. Cele mają numery i znajdują się na pewnym piętrze danego bloku posiada ona również limit więźniów, którzy mogą być w niej zakwaterowani. Każdy blok ma swoją nazwę i ustaloną liczbę pięter (parter to piętro 0).
 ### Wiezniowie_prace i prace_spoleczne
-Czasem więzień chce (lub musi) brać udział w pracach społecznych. W takim wypaadku zostaje on wpisany do danej pracy i zostaje mu przypisany zespół, który będzie go pilnował. Każda praca ma maksymalną liczbę uczestników, tak więc więźniowie muszą się spieszyć, żeby w niej uczestniczyć.
+Czasem więzień chce (lub musi) brać udział w pracach społecznych. W takim wypadku zostaje on wpisany do danej pracy i zostaje mu przypisany zespół, który będzie go pilnował. Każda praca ma maksymalną liczbę uczestników, tak więc więźniowie muszą się spieszyć, żeby w niej uczestniczyć.
 ### Sprawowanie
 Niektórzy osadzeni wyróżniają się swoim zachowaniem (niekoniecznie pozytywnie). Zostaje mu wtedy wpisane sprawowanie. Może ono być dobre(D) lub niedobre(N), w zależności od tego co zrobił. Każdy wpis ma również swoją wagę. Przykładowo uratownie komuś życia jest warte więcej niż umycie zębów.
 ### Wiezniowie_gangi i gangi
@@ -26,7 +26,7 @@ Niektórzy osadzeni wyróżniają się swoim zachowaniem (niekoniecznie pozytywn
 ### Historia_liderow i relacje_gangi
 Gangi niestety mają różne podejścia do siebie. Mogą one mieć różne relacje, które mogą być pozytywne(P) lub negatywne(N). Grupy lubią przypisywać sobie lidera(ów). Notujemy od kiedy do kiedy dany osadzony był liderem danego gangu.
 ### Pracownicy_nieobecnosci i powody_nieobecnosci
-Każdemy czasem nie może być w pracy. Notujemy wtedy niebecność danego pracownika i daty w których nie może być obecny. Powody mogą być różne, niektóre są płatne, a inne nie. Każdy ma swój rodzaj i opis. 
+Każdemy czasem może nie być w pracy. Notujemy wtedy niebecność danego pracownika i daty w których nie może być obecny. Powody mogą być różne, niektóre są płatne, a inne nie. Każdy ma swój rodzaj i opis. 
 ### Pracownicy_zmiany i zmiany
 Nasz zakład operuje zmianowo. Każdy pacownik jest przypisany do pewnych zmian, które pracują w dany dzień o danych godzinach.
 ### Pracownicy_zespoly i zespoly
