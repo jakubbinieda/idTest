@@ -75,3 +75,9 @@ npm install
 ```
 
 Wymaga to posiadania na swojej maszynie zainstalowanego NodeJS, NPM i PostgreSQL. Wymagana jest również konfiguracja pliku `/idWiezienie/client/models/dbModel.js` Należy tam wpisać dane z lokalnego PostgreSQL.
+
+Żeby uruchomić należy użyć komend
+```
+npm run build
+npm run start
+```
