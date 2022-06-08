@@ -71,9 +71,6 @@ Nie zaleca się pobierać tego na własną rękę, ale jeżeli jest taka koniecz
 ```
 git clone https://github.com/jakubbinieda/idWiezienie.git
 cd idWiezienie
-npm install
-cd client/
-npm install
 ```
 
 Wymaga to posiadania na swojej maszynie zainstalowanego NodeJS, NPM i PostgreSQL. Wymagana jest również konfiguracja pliku `/idWiezienie/client/models/dbModel.js` Należy tam wpisać dane z lokalnego PostgreSQL.
