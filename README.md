@@ -83,3 +83,5 @@ Wymaga to posiadania na swojej maszynie zainstalowanego NodeJS, NPM i PostgreSQL
 npm run build
 npm run start
 ```
+
+Pliki z danymi znajdują się w folderze `data`
