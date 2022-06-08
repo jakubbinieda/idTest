@@ -72,7 +72,7 @@ Nie zaleca się pobierać tego na własną rękę, ale jeżeli jest taka koniecz
 git clone https://github.com/jakubbinieda/idWiezienie.git
 cd idWiezienie
 npm install
-cd client/
+cd client 
 npm install
 ```
 
